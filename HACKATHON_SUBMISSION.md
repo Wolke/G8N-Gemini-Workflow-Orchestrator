@@ -52,5 +52,5 @@ We plan to add more native "G8N blocks," including specialized nodes for RAG (Re
 ---
 
 ## Try it out
-* **GitHub Repo:** [https://github.com/Wolke/GeminiAgentBuilder](https://github.com/Wolke/GeminiAgentBuilder)
-* **Demo Site:** [https://Wolke.github.io/GeminiAgentBuilder/](https://Wolke.github.io/GeminiAgentBuilder/)
+* **GitHub Repo:** [https://github.com/Wolke/G8N-Gemini-Workflow-Orchestrator](https://github.com/Wolke/G8N-Gemini-Workflow-Orchestrator)
+* **Demo Site:** [https://Wolke.github.io/G8N-Gemini-Workflow-Orchestrator/](https://Wolke.github.io/G8N-Gemini-Workflow-Orchestrator/)
