@@ -1,0 +1,10 @@
+.template-gallery { border-bottom: 1px solid #2d2d40; background: #10101a; }
+.template-gallery-toggle { width: 100%; border: 0; padding: 13px 14px; display: flex; justify-content: space-between; background: linear-gradient(90deg, rgba(0,176,244,.15), rgba(88,101,242,.12)); color: #eef; font-weight: 700; cursor: pointer; }
+.template-list { display: grid; gap: 10px; padding: 10px; }
+.template-card { padding: 11px; border: 1px solid #33334d; border-radius: 10px; background: #1a1a28; }
+.template-card h4 { margin: 4px 0 6px; color: #fff; }
+.template-card p { color: #9d9db2; font-size: 11px; line-height: 1.45; }
+.template-category { color: #00b0f4; font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; }
+.template-stats { display: flex; gap: 7px; margin-top: 8px; color: #777790; font-size: 9px; }
+.template-target { margin: 8px 0; color: #60d394; font-size: 10px; }
+.template-card button { width: 100%; padding: 7px; border: 1px solid #5865f2; border-radius: 6px; color: #fff; background: #363c88; cursor: pointer; }

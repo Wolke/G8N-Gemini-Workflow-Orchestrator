@@ -1,0 +1,5 @@
+{
+  "compilerOptions": { "composite": true, "target": "ES2022", "module": "NodeNext", "moduleResolution": "NodeNext", "strict": true, "declaration": true, "outDir": "lib", "rootDir": "src", "skipLibCheck": true, "esModuleInterop": true },
+  "references": [{ "path": "../../packages/workflow-schema" }, { "path": "../../packages/tool-providers" }, { "path": "../../packages/workflow-engine" }, { "path": "../../templates" }],
+  "include": ["src"]
+}

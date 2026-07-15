@@ -1,0 +1,9 @@
+{
+  "name": "@g8n/workflow-engine",
+  "version": "0.1.0",
+  "type": "module",
+  "exports": "./src/index.ts",
+  "scripts": { "build": "tsc -b", "test": "vitest run" },
+  "dependencies": { "@g8n/tool-providers": "*", "@g8n/workflow-schema": "*" },
+  "devDependencies": { "typescript": "~5.9.3", "vitest": "^3.2.4" }
+}

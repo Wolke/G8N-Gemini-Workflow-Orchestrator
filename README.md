@@ -1,73 +1,51 @@
-# React + TypeScript + Vite
+# G8N 2.0 — Gemini Workspace Workflow Orchestrator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+G8N 是以 Gemini、Google Workspace MCP、Firebase 與 Apps Script 為核心的視覺化 AI 工作流平台。本 repository 同時支援兩個獨立成果：Agent 工程平台與 Workspace AI 自動化模板庫。
 
-Currently, two official plugins are available:
+## Repository
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```text
+apps/web                 React Flow workflow designer
+apps/runtime             Firebase Functions agent runtime
+packages/workflow-schema Versioned workflow and template contracts
+packages/workflow-engine Resumable, approval-aware execution engine
+packages/tool-providers  Workspace MCP and extension provider interfaces
+templates                Project, Marketing and Education Ops templates
+docs/ironman             Two independent 30-day article tracks
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Quick start
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
+npm run dev
 ```
+
+Quality checks:
+
+```bash
+npm test
+npm run build
+```
+
+The editor includes an Automation Gallery. Import a template, inspect its approval boundaries, configure credentials, and switch to Run mode.
+
+## Runtime deployment
+
+1. Create a Firebase project and enable Authentication, Firestore, Functions and Hosting.
+2. Copy `.firebaserc.example` to `.firebaserc` and set the project ID.
+3. Store the model credential with `firebase functions:secrets:set GEMINI_API_KEY`.
+4. Set `GEMINI_MODEL` through the Functions parameter prompt; the default is `gemini-3.5-flash`.
+5. Deploy Firestore rules, Functions and Hosting with the Firebase CLI.
+
+Workspace MCP OAuth credentials and refresh tokens must remain server-side. Never place a client secret in the web app or Zustand state.
+
+## Safety defaults
+
+- Explicit graph edges only; no implicit node fallback in the G8N 2.0 engine.
+- Write, send, delete, share and grade actions require approval.
+- A resumed run records completed node IDs to prevent duplicate writes.
+- Every runtime execution produces a versioned trace in the authenticated user's Firestore path.
+- GAS remains the Sheets and trigger extension; Gmail, Drive, Calendar, Chat and People use Workspace MCP when available.
+
+See [architecture](docs/ARCHITECTURE.md), [engineering series](docs/ironman/engineering-series.md), and [automation series](docs/ironman/automation-series.md).

@@ -1,7 +1,11 @@
 {
   "files": [],
   "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" }
+    { "path": "./packages/workflow-schema" },
+    { "path": "./packages/tool-providers" },
+    { "path": "./packages/workflow-engine" },
+    { "path": "./templates" },
+    { "path": "./apps/web" },
+    { "path": "./apps/runtime" }
   ]
 }
